@@ -459,6 +459,21 @@ code, pre {
   font-size: 0.95rem;
 }
 
+.service-note {
+  margin-top: 32px;
+  padding: 24px;
+  background: rgba(0, 230, 118, 0.05);
+  border: 1px solid rgba(0, 230, 118, 0.2);
+  border-radius: var(--radius);
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+.service-note strong {
+  color: var(--text-primary);
+}
+
 .projects-section {
   background: linear-gradient(180deg, transparent 0%, rgba(0, 230, 118, 0.02) 100%);
 }

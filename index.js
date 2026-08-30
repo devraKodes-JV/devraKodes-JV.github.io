@@ -8,13 +8,13 @@
   const contactForm = document.getElementById('contactForm');
   const sections = document.querySelectorAll('.section, .hero');
 
-  // Toggle menú móvil
+  // Mobile menu toggle
   navToggle.addEventListener('click', () => {
     navToggle.classList.toggle('active');
     navMenu.classList.toggle('open');
   });
 
-  // Cerrar menú al hacer clic en un enlace
+  // Close menu on link click
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       navToggle.classList.remove('active');
@@ -22,7 +22,7 @@
     });
   });
 
-  // Smooth scroll con offset para navbar fija
+  // Smooth scroll with offset for fixed navbar
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function(e) {
       e.preventDefault();
@@ -40,7 +40,7 @@
     });
   });
 
-  // Highlight del enlace activo según scroll
+  // Highlight active link on scroll
   function updateActiveLink() {
     const scrollPos = window.scrollY + 100;
     sections.forEach(section => {
@@ -61,14 +61,14 @@
   window.addEventListener('scroll', updateActiveLink);
   updateActiveLink();
 
-  // Copiar dirección crypto
+  // Copy crypto address
   copyButtons.forEach(button => {
     button.addEventListener('click', async () => {
       const address = button.getAttribute('data-clipboard');
       try {
         await navigator.clipboard.writeText(address);
         const originalText = button.textContent;
-        button.textContent = '¡Copiado!';
+        button.textContent = 'Copied!';
         button.style.color = 'var(--accent)';
         button.style.borderColor = 'var(--accent)';
         setTimeout(() => {
@@ -86,7 +86,7 @@
         document.execCommand('copy');
         document.body.removeChild(textarea);
         const originalText = button.textContent;
-        button.textContent = '¡Copiado!';
+        button.textContent = 'Copied!';
         setTimeout(() => {
           button.textContent = originalText;
         }, 2000);
@@ -94,7 +94,7 @@
     });
   });
 
-  // Animaciones al hacer scroll (IntersectionObserver)
+  // Scroll animations (IntersectionObserver)
   const observerOptions = {
     threshold: 0.1,
     rootMargin: '0px 0px -50px 0px'
@@ -109,7 +109,7 @@
     });
   }, observerOptions);
 
-  // Aplicar fade-in a elementos clave
+  // Apply fade-in to key elements
   const animatedElements = document.querySelectorAll(
     '.tech-card, .service-card, .project-card, .donation-card, .info-card, .section-title, .section-desc'
   );
@@ -119,7 +119,7 @@
     observer.observe(el);
   });
 
-  // Validación y envío del formulario
+  // Form validation and submission
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
@@ -128,25 +128,25 @@
     const message = document.getElementById('message').value.trim();
 
     if (!name || !email || !message) {
-      alert('Por favor completa todos los campos obligatorios.');
+      alert('Please fill in all required fields.');
       return;
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
-      alert('Por favor ingresa un email válido.');
+      alert('Please enter a valid email.');
       return;
     }
 
     const submitBtn = contactForm.querySelector('.btn-submit');
     const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Enviando...';
+    submitBtn.textContent = 'Sending...';
     submitBtn.disabled = true;
     submitBtn.style.opacity = '0.7';
 
-    // Simulación de envío (aquí iría la integración real)
+    // Submit simulation (real integration would go here)
     setTimeout(() => {
-      alert('¡Mensaje enviado con éxito! Te responderé a la brevedad.');
+      alert('Message sent successfully! I will get back to you soon.');
       contactForm.reset();
       submitBtn.textContent = originalText;
       submitBtn.disabled = false;
@@ -154,7 +154,7 @@
     }, 1500);
   });
 
-  // Efecto parallax sutil en el hero
+  // Subtle parallax effect on hero
   window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
