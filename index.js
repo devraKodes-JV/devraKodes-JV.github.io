@@ -111,7 +111,7 @@
 
   // Apply fade-in to key elements
   const animatedElements = document.querySelectorAll(
-    '.tech-card, .service-card, .project-card, .donation-card, .info-card, .section-title, .section-desc'
+    '.tech-card, .service-card, .project-card, .donation-card, .info-card, .section-title, .section-desc, .detail-card, .feature-card'
   );
 
   animatedElements.forEach(el => {

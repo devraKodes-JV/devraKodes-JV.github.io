@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modular Hexagonal Library | devraKodes-JV</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="../" class="logo">&lt;devraKodes<span class="logo-accent">JV</span>/&gt;</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../#home">Home</a></li>
+        <li><a href="../#technologies">Technologies</a></li>
+        <li><a href="../#services">Services</a></li>
+        <li><a href="../#projects">Projects</a></li>
+        <li><a href="../#donations">Donations</a></li>
+        <li><a href="../#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-pre">Open Source Project</p>
+        <h1 class="hero-title">Modular Hexagonal <span class="hero-accent">Library</span></h1>
+        <p class="hero-sub">A general-purpose library built with modern software engineering practices, strict hexagonal architecture and pure POJO approach.</p>
+        <div class="hero-tags">
+          <span class="tag">Java 25</span>
+          <span class="tag">Javalin 7</span>
+          <span class="tag">Pebble</span>
+          <span class="tag">Hibernate</span>
+          <span class="tag">POJO</span>
+          <span class="tag">Modular Monolith</span>
+          <span class="tag">Hexagonal</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Project <span class="accent">Overview</span></h2>
+      
+      <div class="detail-grid">
+        <div class="detail-card">
+          <h3>Architecture</h3>
+          <p>Modular monolith where each module strictly follows hexagonal architecture (ports and adapters). This ensures framework independence, extreme testability and easy maintainability.</p>
+        </div>
+        <div class="detail-card">
+          <h3>Tech Stack</h3>
+          <ul>
+            <li><strong>Java 25</strong> - Latest LTS with modern language features</li>
+            <li><strong>Javalin 7</strong> - Lightweight web framework</li>
+            <li><strong>Pebble</strong> - Template engine for views</li>
+            <li><strong>Hibernate</strong> - ORM for data persistence</li>
+            <li><strong>Modular System</strong> - Java Platform Module System</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h3>Design Principles</h3>
+          <ul>
+            <li>Pure POJO domain model</li>
+            <li>No framework leakage into core business logic</li>
+            <li>Dependency inversion at module boundaries</li>
+            <li>Clear separation between domain, application and infrastructure</li>
+            <li>Test-first approach with high unit test coverage</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h3>Module Structure</h3>
+          <p>Each module is self-contained with its own hexagonal layers. Modules communicate through well-defined interfaces, allowing independent development, testing and future extraction into microservices if needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section">
+    <div class="container">
+      <h2 class="section-title">Key <span class="accent">Features</span></h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-number">01</div>
+          <h4>Hexagonal per Module</h4>
+          <p>Every module has its own ports and adapters, keeping the domain pure and independent.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-number">02</div>
+          <h4>Pure POJO Domain</h4>
+          <p>Business entities are plain Java objects without any framework annotations or dependencies.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-number">03</div>
+          <h4>Modular Monolith</h4>
+          <p>Single deployable artifact with clear module boundaries for simplicity and performance.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-number">04</div>
+          <h4>Extreme Testability</h4>
+          <p>Architecture designed for easy unit and integration testing without mocks or complex setups.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Project <span class="accent">Structure</span></h2>
+      
+      <div class="structure-block">
+        <pre><code>library/
+├── domain/                 # Pure business logic
+│   ├── module-a/
+│   │   ├── model/         # POJOs
+│   │   ├── ports/         # Interfaces
+│   │   └── service/       # Domain services
+│   └── module-b/
+├── application/           # Use cases
+├── infrastructure/        # Framework adapters
+│   ├── persistence/
+│   ├── web/
+│   └── templating/
+└── config/                # Composition root</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container">
+      <h2 class="section-title">Support <span class="accent">This Project</span></h2>
+      <p class="section-desc">This is an open source project. If you find it useful, consider donating to help us continue building quality software.</p>
+      <a href="../#donations" class="btn btn-primary">View donation methods</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>devraKodes-JV. Professional development with quality standards.</p>
+      <p class="footer-sub">Payments via cryptocurrency. Donations for open source projects.</p>
+    </div>
+  </footer>
+
+  <script src="../index.js"></script>
+</body>
+</html>
