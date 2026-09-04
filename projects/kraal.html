@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kraal | devraKodes-JV</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="../" class="logo">&lt;devraKodes<span class="logo-accent">JV</span>/&gt;</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../#home">Home</a></li>
+        <li><a href="../#technologies">Technologies</a></li>
+        <li><a href="../#services">Services</a></li>
+        <li><a href="../#projects">Projects</a></li>
+        <li><a href="../#donations">Donations</a></li>
+        <li><a href="../#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <p class="hero-pre">Open Source Project</p>
+        <h1 class="hero-title">Kraal</h1>
+        <p class="hero-sub">A native compiled language for safe concurrent programming, featuring ownership-based type safety, static deadlock analysis and WASM-first compilation.</p>
+        <div class="hero-tags">
+          <span class="tag">Rust</span>
+          <span class="tag">WASM</span>
+          <span class="tag">Concurrency</span>
+          <span class="tag">Ownership</span>
+          <span class="tag">Systems</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Project <span class="accent">Overview</span></h2>
+      
+      <div class="detail-grid">
+        <div class="detail-card">
+          <h3>What is Kraal?</h3>
+          <p>A compiled systems language designed for safe concurrent programming. The ownership-based type system catches use-after-move and double-spawn errors at compile time, while static deadlock analysis flags task conflicts before the program runs.</p>
+        </div>
+        <div class="detail-card">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Ownership-based type system with compile-time channel safety</li>
+            <li>Static deadlock analysis for concurrent tasks</li>
+            <li>WASM-first compilation with zero external toolchain dependencies</li>
+            <li>C/Go-inspired syntax with word operators and explicit control flow</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h3>Tech Stack</h3>
+          <ul>
+            <li><strong>Rust</strong> - Compiler implementation</li>
+            <li><strong>WASM</strong> - Primary compilation target</li>
+            <li><strong>Wasmtime</strong> - Embedded runtime (no system install required)</li>
+            <li><strong>Hand-written codegen</strong> - No LLVM or Emscripten dependency</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h3>Project Status</h3>
+          <p>Currently at <strong>v0.3.0-alpha.1</strong>. The language syntax and ownership model are stable. The async runtime roadmap continues toward M5 with stackless coroutines in a single WASM instance.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section">
+    <div class="container">
+      <h2 class="section-title">Language <span class="accent">Highlights</span></h2>
+      
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-number">01</div>
+          <h4>Ownership Safety</h4>
+          <p>Channels cannot be cloned. The compiler catches use-after-move and double-spawn errors before runtime.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-number">02</div>
+          <h4>Static Deadlock Analysis</h4>
+          <p>Two tasks holding one resource and waiting for each other are flagged statically, preventing deadlocks before they happen.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-number">03</div>
+          <h4>WASM-First</h4>
+          <p>The entire compiler has zero dependencies on LLVM, Emscripten, or any system toolchain. It emits a hand-written .wasm module.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-number">04</div>
+          <h4>C/Go-Inspired Syntax</h4>
+          <p>Type-first declarations, word operators (AND/OR/NOT), and parens-mandatory if/while for clear, unambiguous code.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Project <span class="accent">Structure</span></h2>
+      
+      <div class="structure-block">
+        <pre><code>kraal/
+├── compiler/        # Lexer, parser, semantic analysis, ownership, codegen, CLI
+├── runner/          # Wasmtime-based runner with host-side scheduler, channels, tasks
+├── docs/            # Language reference (control-flow, ownership, concurrency)
+└── examples/        # .kraal source files demonstrating features</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section">
+    <div class="container">
+      <h2 class="section-title">Example <span class="accent">Code</span></h2>
+      
+      <div class="structure-block">
+        <pre><code>task worker(ch: Chan<Number>) {
+    ch.send(42);
+    ch.close();
+}
+
+fn main() {
+    Chan<Number> ch = chan<Number>(1);
+    ::worker(ch);          // `ch` is moved into the task
+    print("ok");
+}</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container">
+      <h2 class="section-title">Support <span class="accent">This Project</span></h2>
+      <p class="section-desc">This is an open source project. If you find it useful, consider donating to help us continue building quality software.</p>
+      <a href="../#donations" class="btn btn-primary">View donation methods</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>devraKodes-JV. Professional development with quality standards.</p>
+      <p class="footer-sub">Payments via cryptocurrency. Donations for open source projects.</p>
+    </div>
+  </footer>
+
+  <script src="../index.js"></script>
+</body>
+</html>

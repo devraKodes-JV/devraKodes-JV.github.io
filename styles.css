@@ -480,26 +480,26 @@ code, pre {
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
 }
 
 .project-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 32px;
+  padding: 24px;
   transition: all var(--transition);
   position: relative;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
 }
 
 .project-card:hover {
   border-color: rgba(0, 230, 118, 0.3);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+  transform: translateY(-4px);
 }
 
 .project-card.featured {
@@ -511,9 +511,9 @@ code, pre {
   display: inline-block;
   background: var(--accent);
   color: var(--bg-primary);
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  padding: 4px 12px;
+  padding: 3px 10px;
   border-radius: 20px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -521,26 +521,28 @@ code, pre {
 }
 
 .project-card h3 {
-  font-size: 1.25rem;
+  font-size: 1.1rem;
   font-weight: 700;
 }
 
 .project-desc {
   color: var(--text-secondary);
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 .project-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 8px;
 }
 
 .project-link {
   margin-top: auto;
   color: var(--accent);
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
+  padding-top: 8px;
 }
 
 .donations-section {
