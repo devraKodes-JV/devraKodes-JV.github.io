@@ -259,11 +259,12 @@ code, pre {
 }
 
 .hero-project {
+  min-height: auto;
+  padding: 40px 0 24px;
   flex-direction: column;
   align-items: stretch;
   width: 100%;
 }
-
 .hero-full {
   width: 100%;
   max-width: 100%;
