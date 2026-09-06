@@ -205,6 +205,7 @@ code, pre {
   padding: 120px 0 80px;
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .hero::before {
@@ -257,6 +258,47 @@ code, pre {
   letter-spacing: -2px;
 }
 
+.hero-project {
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+}
+
+.hero-full {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 24px;
+}
+
+.project-hero-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  width: 100%;
+}
+
+.project-hero-media {
+  display: flex;
+  flex-direction: row;
+  gap: 0;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.project-hero-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.project-logo-large {
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
 .hero-accent {
   color: var(--accent);
 }
@@ -264,8 +306,13 @@ code, pre {
 .hero-sub {
   font-size: 1.15rem;
   color: var(--text-secondary);
+  margin-top: 0;
   margin-bottom: 32px;
-  max-width: 480px;
+  max-width: 100%;
+}
+
+.project-hero-info .hero-sub {
+  margin-top: 0;
 }
 
 .hero-cta {
@@ -328,7 +375,6 @@ code, pre {
   color: var(--text-secondary);
   font-size: 1.1rem;
   margin-bottom: 48px;
-  max-width: 600px;
 }
 
 .accent {
@@ -385,8 +431,8 @@ code, pre {
   justify-content: center;
   background: var(--accent-dim);
   border-radius: 10px;
-  margin-bottom: 20px;
   color: var(--accent);
+  flex-shrink: 0;
 }
 
 .tech-icon svg {
@@ -394,9 +440,16 @@ code, pre {
   height: 24px;
 }
 
+.tech-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
 .tech-card h3 {
   font-size: 1.1rem;
-  margin-bottom: 12px;
   font-weight: 600;
 }
 
@@ -442,15 +495,22 @@ code, pre {
 
 .service-number {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 0.85rem;
+  font-size: 1.1rem;
   color: var(--accent);
-  margin-bottom: 16px;
   opacity: 0.8;
+  flex-shrink: 0;
+}
+
+.service-header {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
 .service-card h3 {
   font-size: 1.2rem;
-  margin-bottom: 12px;
   font-weight: 600;
 }
 
@@ -517,12 +577,40 @@ code, pre {
   border-radius: 20px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  align-self: flex-start;
+  flex-shrink: 0;
 }
 
 .project-card h3 {
   font-size: 1.1rem;
   font-weight: 700;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.project-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  flex: 1;
+}
+
+.project-title-group h3 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.project-logo {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 8px;
 }
 
 .project-desc {
@@ -746,6 +834,16 @@ code, pre {
     order: -1;
   }
 
+  .project-logo-large {
+    width: 120px;
+    height: 120px;
+  }
+
+  .project-hero-layout {
+    flex-direction: column;
+    gap: 16px;
+  }
+
   .contact-wrapper {
     grid-template-columns: 1fr;
   }
@@ -785,6 +883,16 @@ code, pre {
 
   .hero-cta {
     flex-direction: column;
+  }
+
+  .project-logo-large {
+    width: 100px;
+    height: 100px;
+  }
+
+  .project-hero-layout {
+    flex-direction: column;
+    gap: 12px;
   }
 
   .btn {
