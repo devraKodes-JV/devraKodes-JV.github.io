@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>routinEXE | devraKodes-JV</title>
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="../" class="logo"><devraKodes<span class="logo-accent">JV</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="../#home">Home</a></li>
+        <li><a href="../#technologies">Technologies</a></li>
+        <li><a href="../#services">Services</a></li>
+        <li><a href="../#projects">Projects</a></li>
+        <li><a href="../#donations">Donations</a></li>
+        <li><a href="../#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header class="hero hero-project">
+    <div class="hero-full">
+      <div class="hero-content">
+        <p class="hero-pre">Open Source Project</p>
+        <div class="project-hero-layout">
+          <div class="project-hero-media">
+            <img class="project-logo-large" src="../img/rountinexe-logo.png" alt="routinEXE logo">
+            <img class="project-logo-large" src="../img/rountinexe-name.png" alt="routinEXE">
+          </div>
+          <div class="project-hero-info">
+            <p class="hero-sub">A cross-platform offline fitness routine management application. Create, track, and progress your training programs without any internet dependency using a local SQLite database.</p>
+            <div class="hero-tags">
+              <span class="tag">Java 25</span>
+              <span class="tag">JavaFX 25.0.4</span>
+              <span class="tag">SQLite</span>
+              <span class="tag">JavaFX</span>
+              <span class="tag">SQLite JDBC 3.49.1.0</span>
+            </div>
+            <div class="hero-downloads">
+              <a href="https://github.com/devraKodes-JV/RoutinEXE/releases/download/v1.0.0/RoutinEXE-1.0.0.exe" class="btn btn-download" data-platform="windows">Download for Windows</a>
+              <a href="https://github.com/devraKodes-JV/RoutinEXE/releases/download/v1.0.0/RoutinEXE-x86_64.AppImage" class="btn btn-download" data-platform="linux">Download for Linux</a>
+              <a href="https://github.com/devraKodes-JV/RoutinEXE/releases/download/v1.0.0/RoutinEXE-1.0.0.dmg" class="btn btn-download" data-platform="macos">Download for macOS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Project <span class="accent">Overview</span></h2>
+
+      <div class="detail-grid">
+        <div class="detail-card">
+          <h3>What is routinEXE?</h3>
+          <p>A JavaFX desktop application for managing exercise routines, training sessions, exercise categories, and users. Works completely offline with a local SQLite database, requiring no cloud dependencies or internet connection.</p>
+        </div>
+        <div class="detail-card">
+          <h3>Key Features</h3>
+          <ul>
+            <li>Users: Create, edit, and delete users (username required, age/height/weight optional)</li>
+            <li>Categories: Manage exercise categories (e.g., Cardio, Strength, Flexibility)</li>
+            <li>Exercises: CRUD for exercises assigned to categories, with description and time-based flag</li>
+            <li>Routines: Create routines per user with days of the week, start/end dates, and assigned exercises (sets, reps)</li>
+            <li>Sessions: Record training sessions by date, with exercise tracking (done/undo) and day completion status</li>
+            <li>Dashboard: Overview per user with statistics and navigation to all sections</li>
+            <li>Calendar: Calendar view for managing sessions by day and month</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h3>Tech Stack</h3>
+          <ul>
+            <li><strong>Java 25</strong> - Latest LTS with modern language features</li>
+            <li><strong>JavaFX 25.0.4</strong> - UI framework for cross-platform desktop applications</li>
+            <li><strong>SQLite JDBC 3.49.1.0</strong> - Local database connectivity</li>
+            <li><strong>Gradle + Maven</strong> - Dual build system support</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h3>Project Status</h3>
+          <p>Stable and production-ready. Core domain and persistence layers are mature. Database auto-seeding available with 150 exercises across 6 categories.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section alt-section">
+    <div class="container">
+      <h2 class="section-title">Architecture</h2>
+
+      <div class="structure-block">
+        <pre><code>routinexe/
+├── src/main/java/com/routineexe/
+│   ├── view/           # UI (JavaFX)
+│   │   ├── Main.java              # Main entry point
+│   │   ├── DashboardLayout.java   # Sidebar + dashboard layout
+│   │   ├── DashboardView.java
+│   │   ├── users/                 # UserView, UserListView, UserFormDialog...
+│   │   ├── categories/            # CategoryView, CategoryListView...
+│   │   ├── exercises/             # ExerciseView, ExerciseListView...
+│   │   ├── routines/              # RoutineView, RoutineListView...
+│   │   └── sessions/              # SessionView, SessionListView...
+│   ├── model/          # Data models
+│   │   ├── User.java
+│   │   ├── Category.java
+│   │   ├── Exercise.java
+│   │   ├── Routine.java
+│   │   ├── RoutineExercise.java
+│   │   ├── Session.java
+│   │   └── SessionExercise.java
+│   ├── database/       # Data access (DAO + helper)
+│   │   ├── DatabaseHelper.java    # SQLite connection + schema
+│   │   ├── UserDAO.java
+│   │   ├── CategoryDAO.java
+│   │   ├── ExerciseDAO.java
+│   │   ├── RoutineDAO.java
+│   │   ├── RoutineExerciseDAO.java
+│   │   ├── SessionDAO.java
+│   │   └── SessionExerciseDAO.java
+│   └── util/           # Utilities
+│       └── FontAwesomeIcons.java
+├── src/main/resources/
+│   ├── styles.css              # Styles (dark theme)
+│   ├── bootstrap-icons.css     # Bootstrap icons
+│   └── fonts/                  # Font Awesome + Bootstrap Icons (.ttf/.woff2)
+└── data/
+    └── routin-exe.db           # SQLite database (auto-created)</code></pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">How to <span class="accent">Run</span></h2>
+
+      <div class="detail-grid">
+        <div class="detail-card">
+          <h3>Prerequisites</h3>
+          <ul>
+            <li>JDK 25 or higher</li>
+            <li>Linux (desktop app); also supports Windows and macOS (profiles in pom.xml)</li>
+          </ul>
+        </div>
+        <div class="detail-card">
+          <h3>Building</h3>
+          <div class="structure-block">
+            <pre><code>With Gradle
+
+./gradlew build
+
+With Maven
+
+mvn clean package</code></pre>
+          </div>
+        </div>
+        <div class="detail-card">
+          <h3>Running</h3>
+          <ul>
+            <li><strong>AppImage (recommended for Linux)</strong>: <code>./dist/RoutinEXE-x86_64.AppImage</code></li>
+            <li><strong>JAR</strong>: <code>java -jar dist/routin-exe.jar</code></li>
+            <li><strong>From IDE</strong>: Run the <code>com.routineexe.view.Main</code> class</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section cta-section">
+    <div class="container">
+      <h2 class="section-title">Support <span class="accent">This Project</span></h2>
+      <p class="section-desc">This is an open source project. If you find it useful, consider donating to help us continue building quality software.</p>
+      <a href="../#donations" class="btn btn-primary">View donation methods</a>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>devraKodes-JV. Engineering robust software with professional standards.</p>
+      <p class="footer-sub">Cryptocurrency payments. Donations support open source development.</p>
+    </div>
+  </footer>
+
+  <script src="../index.js"></script>
+</body>
+</html>
